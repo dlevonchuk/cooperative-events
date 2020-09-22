@@ -1,4 +1,5 @@
 import { CreatePersonDto, UpdatePersonDto } from '../dto/Input';
+import { PersonDto as OutputPersonDto } from '../dto/Output';
 import Person from '../../domain/model/Person';
 
 export default class PersonMapper {
@@ -12,5 +13,12 @@ export default class PersonMapper {
     const person = new Person(personId, inputPersonDto.name);
 
     return person;
+  }
+
+  mappToOutputDto(person: Person): OutputPersonDto {
+    return {
+      id: person.getId(),
+      name: person.getName(),
+    };
   }
 }
