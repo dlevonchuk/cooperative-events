@@ -7,12 +7,20 @@ export default class Person {
     this.events = new Set();
   }
 
-  joinToEvent(event: Event): void {
+  joinToEvent(event: Event): this {
     this.events.add(event);
+
+    return this;
   }
 
-  leaveEvent(event: Event): void{
+  leaveEvent(event: Event): this{
     this.events.delete(event);
+
+    return this;
+  }
+
+  getEvents(): Set<Event> {
+    return this.events;
   }
 
   getName(): string {
