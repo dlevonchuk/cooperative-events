@@ -1,3 +1,3 @@
 export default interface ISequence{
-  getNextId(): number;
+  getNextId(): Promise<number>;
 }

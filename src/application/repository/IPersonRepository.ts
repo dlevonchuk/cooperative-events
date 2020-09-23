@@ -2,9 +2,9 @@ import Person from '../../domain/model/Person';
 import ISequence from './ISequence';
 
 export default interface IPersonRepository extends ISequence {
-  getPerson(id: number): Person;
+  getPerson(id: number): Promise<Person>;
 
-  getPersonsByEvent(eventId: number): Person[]
+  getPersonsByEvent(eventId: number): Promise<Person[]>
 
-  save(person: Person): void
+  save(person: Person): Promise<void>
 }

@@ -10,7 +10,7 @@ This is back-end for project where people can go to events together
 * TypeScript
 * ESLint
 * Jest
-* MongoDB (planned)
-* Docker (planned)
+* MongoDB
+* Docker
 * Redis (planned)
 * RabbitMQ (planned)
