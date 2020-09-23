@@ -1,4 +1,4 @@
-import InputPersonDto from '../../dto/input/IPersonDto';
+import { CreatePersonDto as InputPersonDto } from '../../dto/Input';
 import IPersonRepository from '../../repository/IPersonRepository';
 import Person from '../../../domain/model/Person';
 import PersonMapper from '../../mapper/PersonMapper';

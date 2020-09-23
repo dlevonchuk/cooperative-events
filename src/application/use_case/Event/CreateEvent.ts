@@ -1,5 +1,5 @@
 import IEventRepository from '../../repository/IEventRepository';
-import InputEventDto from '../../dto/input/IEventDto';
+import { CreateEventDto as InputEventDto } from '../../dto/Input';
 import Event from '../../../domain/model/Event';
 import EventMapper from '../../mapper/EventMapper';
 
