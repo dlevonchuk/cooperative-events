@@ -4,7 +4,9 @@ import IPersonRepository from '../../repository/IPersonRepository';
 export default class GetEventPersons {
   constructor(private repository: IPersonRepository) {}
 
-  getEventPersons(eventId: number): Person[] {
-    return this.repository.getPersonsByEvent(eventId);
+  async getEventPersons(eventId: number): Promise<Person[]> {
+    const persons = await this.repository.getPersonsByEvent(eventId);
+
+    return persons;
   }
 }

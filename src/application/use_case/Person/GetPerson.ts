@@ -6,8 +6,8 @@ import { PersonDto as OutputPersonDto } from '../../dto/Output';
 export default class GetPerson {
   constructor(private repository: IPersonRepository, private mapper: PersonMapper) {}
 
-  getPerson(id: number): OutputPersonDto {
-    const person: Person = this.repository.getPerson(id);
+  async getPerson(id: number): Promise<OutputPersonDto> {
+    const person: Person = await this.repository.getPerson(id);
 
     return this.mapper.mappToOutputDto(person);
   }

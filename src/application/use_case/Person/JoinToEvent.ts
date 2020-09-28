@@ -10,9 +10,9 @@ export default class JoinToEvent {
     private personRepository: IPersonRepository,
   ) {}
 
-  jointToEvent(joinToEventDto: JoinToEventDto): void {
-    const event: Event = this.eventRepository.getEvent(joinToEventDto.eventId);
-    const person: Person = this.personRepository.getPerson(joinToEventDto.personId);
+  async jointToEvent(joinToEventDto: JoinToEventDto): Promise<void> {
+    const event: Event = await this.eventRepository.getEvent(joinToEventDto.eventId);
+    const person: Person = await this.personRepository.getPerson(joinToEventDto.personId);
 
     person.joinToEvent(event);
 

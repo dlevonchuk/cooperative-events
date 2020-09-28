@@ -6,8 +6,8 @@ import PersonMapper from '../../mapper/PersonMapper';
 export default class CreatePersonUseCase {
   constructor(private repository: IPersonRepository, private personMapper: PersonMapper) {}
 
-  createPerson(personDto: InputPersonDto): void {
-    const nextId = this.repository.getNextId();
+  async createPerson(personDto: InputPersonDto): Promise<void> {
+    const nextId = await this.repository.getNextId();
     const person: Person = this.personMapper.mappToEntity(personDto, nextId);
 
     this.repository.save(person);

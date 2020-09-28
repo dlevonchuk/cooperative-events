@@ -6,8 +6,8 @@ import EventMapper from '../../mapper/EventMapper';
 export default class GetEvent {
   constructor(private repository: IEventRepository, private eventMapper: EventMapper) {}
 
-  getEvent(id: number): OutputEventDto {
-    const event: Event = this.repository.getEvent(id);
+  async getEvent(id: number): Promise<OutputEventDto> {
+    const event: Event = await this.repository.getEvent(id);
 
     return this.eventMapper.mappToOutputDto(event);
   }
