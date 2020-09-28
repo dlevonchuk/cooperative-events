@@ -12,5 +12,5 @@ This is back-end for project where people can go to events together
 * Jest
 * MongoDB
 * Docker
-* Redis (planned)
+* Redis
 * RabbitMQ (planned)
