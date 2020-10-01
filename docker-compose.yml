@@ -1,5 +1,9 @@
-version: '3.8'
+version: "3.8"
 services:
+  app:
+    build: .
+    ports:
+      - 5000:5000
   mongodb:
     image: mongo:latest
     container_name: ce_mongodb
@@ -17,7 +21,7 @@ services:
     container_name: ce_redis
     env_file:
       - .env
-    command: ['redis-server', '--requirepass', '${REDIS_PASSWORD}', '--appendonly', 'yes']
+    command: ["redis-server", "--requirepass", "${REDIS_PASSWORD}", "--appendonly", "yes"]
     ports:
       - 6379:6379
     volumes:
